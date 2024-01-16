@@ -53,7 +53,15 @@ while true
     try
         red_center = (redCentroid(1,:)+redCentroid(2,:)) ./ 2;
         green_center = (greenCentroid(1,:)+greenCentroid(2,:)) ./ 2;
-        centers = [ red_center; green_center ];
+        silver_center = silverCentroid;
+
+        centers = [ red_center; silver_center; green_center ];
+
+        distance_from_red_center = sqrt((silver_center(1)-red_center(1))^2+(silver_center(2)-red_center(2))^2);
+        distance_from_green_center = sqrt((silver_center(1)-green_center(1))^2+(silver_center(2)-green_center(2))^2);
+
+        outputImage = insertText(outputImage, [20 20], ['red: ', num2str(distance_from_red_center)]);
+        outputImage = insertText(outputImage, [20 650], ['green: ', num2str(distance_from_green_center)]);
 
         outputImage = insertShape(outputImage, 'rectangle', redbbox);
         outputImage = insertShape(outputImage, 'rectangle', greenbbox);
