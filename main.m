@@ -1,7 +1,7 @@
 clc, clear
 
-cam = webcam("/dev/video2");
-
+cam = webcam("Newmine Camera");
+% cam = webcam("/dev/video2");
 % toto zmeniť podľa potreby
 
 % cam.Resolution = '1250x720';
