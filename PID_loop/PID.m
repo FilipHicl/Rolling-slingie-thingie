@@ -26,7 +26,7 @@ classdef PID
             this.Kd = Kd;
             this.Setpoint = Setpoint;
             this.Dt = Dt;
-            this.Integral = 0;
+            this.Integral = 50;
             this.PreviousError = 0;
         end
         
