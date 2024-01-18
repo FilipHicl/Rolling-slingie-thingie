@@ -8,7 +8,5 @@ image_analyzer = ImageAnalyzer("/dev/video0");
 zapnute = true;
 
 while zapnute
-    image_analyzer.analyze();
+    suradnica = image_analyzer.analyze();
 end
-
-clear
