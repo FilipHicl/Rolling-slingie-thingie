@@ -17,7 +17,7 @@ motory = motory(ports);
 
 
 
-motory.setSpeed(80);
+motory.setSpeed(60);
 
 while true
 
