@@ -13,9 +13,9 @@ classdef ImageAnalyzer < handle
 
     methods
         function self = ImageAnalyzer()
-            self.cam = webcam("/dev/video0");
+            % self.cam = webcam("/dev/video0");
             % self.cam = webcam("Video Camera");
-            % self.cam = webcam("Newmine Camera");
+            self.cam = webcam("Newmine Camera");
             % toto zmeniť podľa potreby
 
             % self.cam.Resolution = '1250x720';

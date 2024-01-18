@@ -5,7 +5,7 @@ image_analyzer = ImageAnalyzer();
 
 ports =  'AD';
 motory = motory(ports);
-motory.setSpeed(80);
+motory.setSpeed(50);
 
 Kp = 1.0;
 Ki = 1;
@@ -17,6 +17,7 @@ controller = PID(Kp, Ki, Kd, Setpoint, Dt);
 
 
 motory.start();
+pause(2);
 
 while ~motory.touch()
 
@@ -24,6 +25,7 @@ while ~motory.touch()
 
     motory.setSpeed(controller.computeOutput(vyska));
     % pause(0.1);
+    disp(controller.computeOutput(vyska))
 end
 
 motory.stop();
