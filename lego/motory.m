@@ -46,5 +46,9 @@ classdef motory
                 this.motor{id}.Speed = newSpeed;
             end
         end
+
+        function delete(this)
+            stop()
+        end
     end
 end

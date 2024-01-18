@@ -13,7 +13,7 @@ ports =  ['A','B'];
 
 motory = motory(ports);
 
-motory.speed = 50; 
+motory.setSpeed(50)
 
 motory.start()
 
