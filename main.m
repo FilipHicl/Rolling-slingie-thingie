@@ -1,9 +1,7 @@
 clc, clear
 
 
-% image_analyzer = ImageAnalyzer("/dev/video0");
-% image_analyzer = ImageAnalyzer("Laptop Camera");
-image_analyzer = ImageAnalyzer("Newmine Camera");
+image_analyzer = ImageAnalyzer();
 
 
 zapnute = true;
