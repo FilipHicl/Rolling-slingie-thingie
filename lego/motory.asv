@@ -23,7 +23,7 @@ classdef motory < handle
             end
 
             this.button = touchSensor(cube);
-            
+            touchSensor(cube,this.bu)
             
 
 
@@ -52,7 +52,7 @@ classdef motory < handle
         end
 
         function val = touch(this)
-            val = readTouch(this.button);
+            
         end
     end
 end

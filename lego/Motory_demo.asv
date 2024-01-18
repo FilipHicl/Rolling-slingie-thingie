@@ -9,7 +9,7 @@ clc
 % 
 % start(motor)
 
-ports =  'AB';
+ports =  ['A','B'];
 
 motory = motory(ports);
 
@@ -17,18 +17,19 @@ motory = motory(ports);
 
 
 
-motory.setSpeed(100);
+motory.setSpeed(50);
 
 while true
 
     while ~motory.touch()
+    
     end
 
     motory.start();
     
+    
     while motory.touch()
     end
-
     motory.stop()
 
 end
