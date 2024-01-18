@@ -32,7 +32,7 @@ classdef ImageAnalyzer < handle
 
         end
 
-        function output_image = analyze(self)
+        function suradnica = analyze(self)
             img = self.cam.snapshot();
 
             red_mask    = createMaskRed(   img);
@@ -61,6 +61,8 @@ classdef ImageAnalyzer < handle
             % mask = green_mask+red_mask + silver_mask; 
             % output_image(repmat(~mask,[1 1 3])) = 0;
 
+            suradnica = 0;
+
             try
                 red_center    = (  red_centroid(1,:) +   red_centroid(2,:)) ./ 2;
                 green_center  = (green_centroid(1,:) + green_centroid(2,:)) ./ 2;
@@ -71,8 +73,8 @@ classdef ImageAnalyzer < handle
                 distance_from_red_center   = sqrt((silver_center(1) -   red_center(1))^2 + (silver_center(2) -   red_center(2))^2);
                 distance_from_green_center = sqrt((silver_center(1) - green_center(1))^2 + (silver_center(2) - green_center(2))^2);
 
-                output_image = insertText(output_image, [20 20],  ['red: ',   num2str(distance_from_red_center)  ]);
-                output_image = insertText(output_image, [20 650], ['green: ', num2str(distance_from_green_center)]);
+                output_image = insertText(output_image, [20 20],  ['distance from top: ',    num2str(distance_from_red_center)  ]);
+                output_image = insertText(output_image, [20 650], ['distance from bottom: ', num2str(distance_from_green_center)]);
 
                 output_image = insertShape(output_image, 'rectangle',    red_bbox);
                 output_image = insertShape(output_image, 'rectangle',  green_bbox);
@@ -83,6 +85,9 @@ classdef ImageAnalyzer < handle
                 output_image = insertShape(output_image, 'line',   red_centroid);
 
                 output_image = insertShape(output_image, 'line', centers);
+
+                % toto je iba približné
+                suradnica = distance_from_green_center - distance_from_red_center;
             catch
             end
                 
