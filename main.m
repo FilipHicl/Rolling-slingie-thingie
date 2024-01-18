@@ -40,8 +40,8 @@ while true
     silver_mask = imdilate(silver_mask, diskDilate);
     % silver_mask = imopen(silver_mask, disk);
 
-    [redArea, redCentroid, redbbox] = step(hBlobAnalysis, red_mask);
-    [greenArea, greenCentroid, greenbbox] = step(hBlobAnalysis, green_mask);
+    [   redArea,    redCentroid,    redbbox] = step(hBlobAnalysis,    red_mask);
+    [ greenArea,  greenCentroid,  greenbbox] = step(hBlobAnalysis,  green_mask);
     [silverArea, silverCentroid, silverbbox] = step(hBlobAnalysis, silver_mask);
 
     
