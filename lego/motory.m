@@ -1,4 +1,4 @@
-classdef motory
+classdef motory < handle
     % Set propertie
 
     properties
@@ -26,10 +26,6 @@ classdef motory
         end
 
         function start(this)
-            for ig = 1:numel(this.motor)
-                this.motor{ig}.Speed = this.speed;
-            end
-
             for id = 1:numel(this.motor)
                 start(this.motor{id})
             end
@@ -48,7 +44,7 @@ classdef motory
         end
 
         function delete(this)
-            stop()
+            stop(this)
         end
     end
 end
