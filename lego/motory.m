@@ -42,9 +42,9 @@ classdef motory
         end
 
         function this = setSpeed(this,newSpeed)
-            % for id = 1:numel(this.motor)
-            %     stop(this.motor{id})
-            % end
+            for id = 1:numel(this.motor)
+                this.motor{id}.speed = newSpeed;
+            end
         end
     end
 end
