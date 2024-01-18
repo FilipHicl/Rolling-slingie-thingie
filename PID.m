@@ -1,4 +1,4 @@
-classdef PID
+classdef PID < handle
     properties
         Kp % Proportional gain
         Ki % Integral gain

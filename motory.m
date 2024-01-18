@@ -47,19 +47,23 @@ classdef motory < handle
             end
         end
 
-        function delete(this)
-            stop(this)
+
+        function val = touch(this)
+            val = readTouch(this.button);
+        end
+
+
+        function delete(this) %destructor
+            % stop(this)
             
             for id = 1:numel(this.motor)
                 this.motor{id}.delete();
             end
             cube.delete();
+            
 
 
         end
 
-        function val = touch(this)
-            val = readTouch(this.button);
-        end
     end
 end

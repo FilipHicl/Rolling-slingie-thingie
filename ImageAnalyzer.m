@@ -12,10 +12,10 @@ classdef ImageAnalyzer < handle
     end
 
     methods
-        function self = ImageAnalyzer()
+        function self = ImageAnalyzer(camera)
             % self.cam = webcam("/dev/video0");
             % self.cam = webcam("Video Camera");
-            self.cam = webcam("Newmine Camera");
+            self.cam = webcam(camera);
             % toto zmeniť podľa potreby
 
             % self.cam.Resolution = '1250x720';
@@ -96,6 +96,10 @@ classdef ImageAnalyzer < handle
                 
             step(self.video_player, output_image);
 
+        end
+
+        function delete(self)
+            self.cam.delete();
         end
     end
 end
