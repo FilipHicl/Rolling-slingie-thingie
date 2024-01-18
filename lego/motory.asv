@@ -40,11 +40,5 @@ classdef motory
                 stop(this.motor{id})
             end
         end
-
-        function this = setSpeed(this,newSpeed)
-            % for id = 1:numel(this.motor)
-            %     stop(this.motor{id})
-            % end
-        end
     end
 end

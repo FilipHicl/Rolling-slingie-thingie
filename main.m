@@ -1,6 +1,6 @@
 clc, clear
 
-cam = webcam("Newmine Camera");
+cam = webcam("Laptop Camera");
 % cam = webcam("/dev/video2");
 % toto zmeniť podľa potreby
 
