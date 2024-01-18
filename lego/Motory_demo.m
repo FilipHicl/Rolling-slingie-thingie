@@ -9,7 +9,7 @@ clc
 % 
 % start(motor)
 
-ports =  'AB';
+ports =  'AD';
 
 motory = motory(ports);
 
@@ -17,7 +17,7 @@ motory = motory(ports);
 
 
 
-motory.setSpeed(100);
+motory.setSpeed(80);
 
 while true
 
@@ -30,5 +30,5 @@ while true
     end
 
     motory.stop()
-
+pause(0.1);
 end
