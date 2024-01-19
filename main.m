@@ -23,6 +23,11 @@ camera = "Newmine Camera";
 image_analyzer = ImageAnalyzer(camera);
 %
 
+
+
+
+
+
 % Motory setup
 ports =  'AD';
 motory = motory(ports);
@@ -39,9 +44,12 @@ while ~motory.touch()
 
     vyska = image_analyzer.analyze();
 
-    motory.setSpeed(controller.computeOutput(vyska));
-    % pause(0.1);
-    disp(controller.computeOutput(vyska))
+    
+    speed = controller.computeOutput(vyska);
+    % speed = 50;
+    motory.setSpeed(speed);
+    % pause(0.2);
+    % disp(controller.computeOutput(vyska))
 end
 
 motory.stop();

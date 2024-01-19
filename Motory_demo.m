@@ -17,18 +17,15 @@ motory = motory(ports);
 
 
 
-motory.setSpeed(60);
+motory.setSpeed(50);
 
-while true
 
-    while ~motory.touch()
-    end
+% while ~motory.touch()
+% end
 
-    motory.start();
-    
-    while motory.touch()
-    end
+motory.start();
 
-    motory.stop()
-pause(0.1);
+while ~motory.touch()
 end
+
+motory.stop()

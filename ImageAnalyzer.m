@@ -49,7 +49,7 @@ classdef ImageAnalyzer < handle
             green_mask = imdilate(green_mask, self.disk_dilate);
             % green_mask = imopen(green_mask, self.disk);
 
-            silver_mask = imerode( silver_mask, self.disk_erode);
+            % silver_mask = imerode( silver_mask, self.disk_erode);
             silver_mask = imdilate(silver_mask, self.disk_dilate);
             % silver_mask = imopen(silver_mask, self.disk);
 

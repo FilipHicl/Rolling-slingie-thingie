@@ -16,6 +16,7 @@ classdef PID < handle
 
     properties (Access = protected)
         Integral % Integral term accumulator
+        debug
     end
 
     methods
@@ -28,6 +29,7 @@ classdef PID < handle
             this.Dt = Dt;
             this.Integral = 50;
             this.PreviousError = 0;
+            this.debug = false;
         end
         
 
@@ -53,6 +55,10 @@ classdef PID < handle
 
             % Update for next iteration
             this.PreviousError = error;
+
+            if this.debug
+                disp('Out' + output + 'P'+P + 'I'+I + 'D'+D)
+            end
         end
     end
 end
