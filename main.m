@@ -16,8 +16,8 @@ controller = PID(Kp, Ki, Kd, Setpoint, Dt);
 
 
 % Camera setup
-% camera = "Newmine Camera";
-camera = "/dev/video0";
+camera = "Newmine Camera";
+% camera = "/dev/video0";
 % camera = "Video Camera";
 
 image_analyzer = ImageAnalyzer(camera);
@@ -44,5 +44,6 @@ while ~motory.touch()
     disp(controller.computeOutput(vyska))
 end
 
+motory.stop();
 motory.delete();
 image_analyzer.delete();

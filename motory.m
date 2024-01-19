@@ -53,17 +53,17 @@ classdef motory < handle
         end
 
 
-        function delete(this) %destructor
-            % stop(this)
+        % function delete(this) %destructor
+        %     % stop(this)
             
-            for id = 1:numel(this.motor)
-                this.motor{id}.delete();
-            end
-            cube.delete();
+        %     for id = 1:numel(this.motor)
+        %         this.motor{id}.delete();
+        %     end
+        %     cube.delete();
             
 
 
-        end
+        % end
 
     end
 end
