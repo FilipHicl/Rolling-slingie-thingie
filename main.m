@@ -37,7 +37,7 @@ pause(2);
 
 while ~motory.touch()
 
-    vyska = image_analyzer.analyze(camera);
+    vyska = image_analyzer.analyze();
 
     motory.setSpeed(controller.computeOutput(vyska));
     % pause(0.1);
