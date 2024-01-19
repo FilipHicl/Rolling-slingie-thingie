@@ -46,7 +46,7 @@ while ~motory.touch()
 
     
     speed = controller.computeOutput(vyska);
-    % speed = 50;
+    speed = 50;
     motory.setSpeed(speed);
     % pause(0.2);
     % disp(controller.computeOutput(vyska))
